@@ -21,3 +21,9 @@
     - `pytest -m part1`
     - `pytest -m part2`
     - `pytest -m part3`
+    
+    Support for pytest-html is also included. Exporting results to HTML can be helpful when examining failures not 
+    related to Applitools. Reports can be generated using the following example commands:
+    - `pytest -m part1 --html=report1.html`
+    - `pytest -m part2 --html=report2.html`
+    - `pytest -m part3 --html=report3.html`
