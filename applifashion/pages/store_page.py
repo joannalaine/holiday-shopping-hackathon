@@ -10,6 +10,8 @@ from selenium.webdriver.remote.webdriver import WebDriver
 
 class StorePage:
     BASE_URL = "https://demo.applitools.com/"
+
+    # Locators for elements used during testing
     FILTER_BUTTON = (By.ID, "filterBtn")
     PRODUCT_GRID = (By.ID, "product_grid")
 
@@ -19,7 +21,7 @@ class StorePage:
 
     def choose_product(self, selection: str):
         """
-        Click on an item in the product grid by finding the product name.
+        Click on an item in the product grid by finding the product by name.
 
         :param selection: The position in the grid of the desired product
         """
@@ -58,7 +60,7 @@ class StorePage:
         """
         Perform a visual check of a page or region.
 
-        :param eyes: Eyes pytest fixture
+        :param eyes: Applitools Eyes pytest fixture
         :param test: A name for the test in the batch
         :param step: A name for the step within the test
         :param region: (Optional) A locator tuple (selenium.webdriver By, locator value)
