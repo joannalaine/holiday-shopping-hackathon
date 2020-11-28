@@ -34,15 +34,15 @@ holiday-shopping-hackathon
 │
 ├── applifashion
 │   ├── pages 
-│   │   └── store_page.py
+│   │   └── store_page.py - page element locators and interaction methods
 │   ├── tests
 │   │   ├── test_applifashion.py - tests picked up by pytest runner, matches test tasks with URL to test and Eyes config to use, separated by part
 │   │   └── test_tasks.py - steps for each of the three checks used in parts 1-3
 │   └── conftest.py - configuration file to set up pytest fixtures for Applitools Eyes and Chrome WebDriver
 ├── .gitignore - a list of file types to exclude from the repo
 ├── pytest.ini - configuration file that defines markers used to run specific tests together
-├── README.md (this file) - Description of project and instructions for use
-└── requirements.txt
+├── README.md (this file) - description of project and instructions for use
+└── requirements.txt - python package dependencies
 ```
 
 ### Project description:
