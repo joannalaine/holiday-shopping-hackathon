@@ -14,7 +14,7 @@ from applitools.selenium import (
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 
-batch_info = BatchInfo("Testing Lifecycle")
+batch_info = BatchInfo("Holiday Shopping")
 
 
 def eyes_setup(runner):
