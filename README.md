@@ -45,6 +45,24 @@ holiday-shopping-hackathon
 └── requirements.txt - python package dependencies
 ```
 
+### Approach:
+For background, see Project Description below.
+
+Since the project requires running the same tests against three different URLs, I made the test tasks resuable. The steps for the tasks are defined in `applifashion/tests/test_tasks.py`.
+
+For the scope of this test suite, there is only one page that browser must interact with, the main page of the store which displays a product grid and various filters. I placed the element locators and UI interaction methods in `applifashion/pages/store_page.py`.
+
+The actual test cases that are picked up by pytest are defined in `applifashion/tests/test_applifashion.py`. 
+Since the project runs the same three tasks against three different versions of a page, this file serves to parametrize the test cases with the URLs and pytest markers in an effort to minimize the duplication of code.
+I used fixtures to define the two different Eyes configurations (one with just Chrome for the first two parts, and one with multiple browsers for the last part). 
+Unfortunately, I discovered that I was unable to use fixture names with parametrization, so part 3 is essentially duplicated and separate from parts 1 and 2.
+Future improvement would explore either 1) figuring out how to refactor the Eyes configurations out of fixtures or 2) determining how to have one fixture configure Eyes dynamically based upon the test part.
+
+To help with debugging during development, the output from the most recent run is stored in `mostrecent.log`.
+Additionally, I included pytest-html reporting to optionally log the various test runs.
+The test result details for visual comparisons are available in the Applitools dashboard.
+
+
 ### Project description:
 Source: https://applitools.com/hackathon-v20-3-instructions/
 #### Part 1
